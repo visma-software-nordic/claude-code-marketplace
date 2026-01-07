@@ -13,7 +13,7 @@ From inside Claude Code, add the marketplace:
 Then install plugins:
 
 ```
-/plugin install ngx-gaia@claude-code-marketplace
+/plugin install ngx-gaia@visma-software-nordic-marketplace
 ```
 
 ## Available Plugins

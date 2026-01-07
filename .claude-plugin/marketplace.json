@@ -1,0 +1,18 @@
+{
+  "name": "claude-code-marketplace",
+  "owner": {
+    "name": "Visma Software AS"
+  },
+  "metadata": {
+    "description": "Visma Software Nordic marketplace",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "ngx-gaia",
+      "source": "ngx-gaia",
+      "description": "Provides usage guidance for @vsn-ux/ngx-gaia Angular components (Gaia design system)"
+    }
+  ]
+}

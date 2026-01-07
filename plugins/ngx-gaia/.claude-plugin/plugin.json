@@ -1,0 +1,9 @@
+{
+  "name": "ngx-gaia",
+  "version": "1.0.0",
+  "description": "Provides usage guidance for @vsn-ux/ngx-gaia Angular components (Gaia design system)",
+  "author": {
+    "name": "Rokas Brazdzionis",
+    "email": "rokas.brazdzionis@visma.com"
+  }
+}

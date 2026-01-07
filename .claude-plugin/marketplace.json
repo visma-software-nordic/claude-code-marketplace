@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "ngx-gaia",
-      "source": "ngx-gaia",
+      "source": "./plugins/ngx-gaia",
       "description": "Provides usage guidance for @vsn-ux/ngx-gaia Angular components (Gaia design system)"
     }
   ]

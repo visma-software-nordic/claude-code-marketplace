@@ -35,6 +35,7 @@ Requires `@vsn-ux/ngx-gaia`. If doc links fail, the package is not installed in 
 | Segmented Control | GaSegmentedControlModule | [segmented-control.md](/node_modules/@vsn-ux/ngx-gaia/docs/segmented-control.md) |
 | Select            | GaSelectModule           | [select.md](/node_modules/@vsn-ux/ngx-gaia/docs/select.md)                       |
 | Spinner           | GaSpinnerModule          | [spinner.md](/node_modules/@vsn-ux/ngx-gaia/docs/spinner.md)                     |
+| Stepper           | GaStepperModule          | [stepper.md](/node_modules/@vsn-ux/ngx-gaia/docs/stepper.md)                     |
 | Switch            | GaSwitchModule           | [switch.md](/node_modules/@vsn-ux/ngx-gaia/docs/switch.md)                       |
 | Tabs              | GaTabsModule             | [tabs.md](/node_modules/@vsn-ux/ngx-gaia/docs/tabs.md)                           |
 | Text Area         | GaTextAreaModule         | [textarea.md](/node_modules/@vsn-ux/ngx-gaia/docs/textarea.md)                   |

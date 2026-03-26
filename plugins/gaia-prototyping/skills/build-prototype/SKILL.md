@@ -13,7 +13,12 @@ Every visible UI element in the prototype must be built from Gaia components dis
 
 The only custom CSS allowed is **layout scaffolding**: flexbox/grid containers, spacing between sections, page-level margins and paddings. Everything else — buttons, inputs, cards, tags, progress bars, alerts, etc. — must come from Gaia.
 
-If the UI requires something that has no Gaia equivalent, do not invent it with custom styles. Instead, tell the user it's not available and suggest the closest Gaia alternative. The user may then explicitly approve using a custom element — only proceed with custom styles when the user says so.
+If the UI requires something that has no Gaia equivalent, **stop and ask the user** before proceeding. Present them with options:
+1. The closest Gaia alternative(s) you found, with a brief explanation of how they differ from what was requested.
+2. Skip the element entirely.
+3. Build it with custom CSS (only if the user explicitly chooses this).
+
+Never silently substitute a custom element or skip something — the user may know of a better Gaia component to use, or may have a preference you can't predict. Wait for their answer before continuing.
 
 ## Before you start
 
@@ -55,7 +60,7 @@ ls /tmp/package/dist/docs/
 ```
 Each `{ComponentName}.md` file represents an available component — these are the only components you may use. File names are **PascalCase** (e.g. `FormField.md`, not `form-field.md`).
 
-If the user asks for something that doesn't have a doc file, tell them it's not available in the design system and suggest the closest alternative.
+If the user asks for something that doesn't have a doc file, stop and ask the user — present the closest Gaia alternatives and let them decide how to proceed (see "Core constraint" above).
 
 Before using any component, read its documentation to understand the correct HTML structure from the extracted files at `/tmp/package/dist/docs/{ComponentName}.md`. Do not guess the structure, always consult the docs first.
 
@@ -129,7 +134,7 @@ The goal here is to translate the *intent and layout* into Gaia — not to repli
 - Map each UI element to the closest Gaia equivalent. A Material "chip" becomes a Gaia Tag, a Fluent "dialog" becomes a Gaia Modal, etc.
 - Preserve the layout, flow, and information hierarchy.
 - Do not try to replicate the visual style of the source design system — let Gaia's own styling take over.
-- If the source contains elements that have no Gaia equivalent, tell the user and suggest alternatives or omissions.
+- If the source contains elements that have no Gaia equivalent, stop and ask the user before proceeding — list what's missing, suggest the closest Gaia alternatives, and let them decide (see "Core constraint" above).
 
 If it's not obvious which case applies (e.g. a clean screenshot that could be Gaia or something else), ask the user.
 

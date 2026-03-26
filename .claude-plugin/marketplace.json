@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Visma Software Nordic marketplace",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -13,6 +13,11 @@
       "name": "ngx-gaia",
       "source": "./plugins/ngx-gaia",
       "description": "Provides usage guidance for @vsn-ux/ngx-gaia Angular components (Gaia design system)"
+    },
+    {
+      "name": "gaia-prototyping",
+      "source": "./plugins/gaia-prototyping",
+      "description": "Build HTML prototypes using the Gaia design system with CSS from CDN"
     }
   ]
 }

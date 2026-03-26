@@ -1,6 +1,6 @@
 {
   "name": "gaia-prototyping",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build HTML prototypes using the Gaia design system with CSS from CDN",
   "author": {
     "name": "Rokas Brazdzionis",

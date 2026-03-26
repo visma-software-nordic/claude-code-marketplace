@@ -7,6 +7,14 @@ description: Build HTML prototypes using the Gaia design system. Use this skill 
 
 Build standalone HTML prototypes that use the Gaia design system via its CSS from a public CDN.
 
+## Core constraint — Gaia components only
+
+Every visible UI element in the prototype must be built from Gaia components discovered in Step 2. Do not create custom-styled elements that replicate what a Gaia component already provides — even if it seems simpler or faster. If you need a progress bar, check if `ProgressBar.md` exists before writing custom CSS. If you need a badge, use the Gaia badge. Always cross-reference the discovered component list against what you need.
+
+The only custom CSS allowed is **layout scaffolding**: flexbox/grid containers, spacing between sections, page-level margins and paddings. Everything else — buttons, inputs, cards, tags, progress bars, alerts, etc. — must come from Gaia.
+
+If the UI requires something that has no Gaia equivalent, do not invent it with custom styles. Instead, tell the user it's not available and suggest the closest Gaia alternative. The user may then explicitly approve using a custom element — only proceed with custom styles when the user says so.
+
 ## Before you start
 
 Clarify the user's intent if not already obvious:
@@ -82,9 +90,9 @@ Output a single standalone HTML file. Structure:
 
 Rules:
 - The prototype must be a single self-contained `.html` file. All JavaScript, styles, and content go in this one file. Do not create any additional files (no separate `.js`, `.css`, `.json`, images, etc.).
-- Only use components discovered in Step 2, with the HTML structure from their docs.
+- Every UI element must use a Gaia component with the HTML structure from its docs (see "Core constraint" above). Before writing any custom-styled element, check the full component list from Step 2 — if a Gaia component covers the need, use it.
 - Keep the HTML semantic and clean.
-- Use inline `<style>` only for layout scaffolding (grid, flexbox positioning, page-level spacing) — never to replicate or override Gaia component styles.
+- Use inline `<style>` only for layout scaffolding (grid, flexbox positioning, page-level spacing) — never to style UI elements that Gaia already provides.
 - Use inline `<script>` for any interactive behavior (tabs, modals, form validation, mock data, etc.).
 - If building from a screenshot, see the "Building from a screenshot" section below.
 

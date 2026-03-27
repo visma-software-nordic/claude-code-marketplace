@@ -41,3 +41,4 @@ To share this marketplace with your team by default, add this to your project's 
 | Plugin | Description |
 |--------|-------------|
 | **ngx-gaia** | Provides usage guidance for `@vsn-ux/ngx-gaia` Angular components (Gaia design system) |
+| **gaia-prototyping** | Build HTML prototypes using the Gaia design system with CSS from CDN |

@@ -25,9 +25,10 @@ Never silently substitute a custom element or skip something — the user may kn
 Clarify the user's intent if not already obvious:
 
 1. **From scratch** — the user describes what they want to build in words.
-2. **From existing UI** — the user wants to recreate or adapt an existing design. Suggest they upload a screenshot if they haven't already.
+2. **From a URL** (Claude Code with `chrome-devtools-mcp` only) — the user provides a URL to an existing page. Use chrome-devtools-mcp to navigate to the page, take a screenshot, and extract the HTML structure yourself. This is the easiest path for the user and gives you the best input (both visual and semantic).
+3. **From screenshot/HTML** — the user provides a screenshot, HTML source, or both. For the best results, ask them to provide **both**. The HTML gives you the semantic structure and element hierarchy (even if the CSS classes differ from Gaia), while the screenshot shows the visual target. If the user only provides one, ask if they can also share the other — but don't block on it if they can't.
 
-Ask the user which case applies before proceeding. This matters because building from an existing UI means matching structure and layout closely, while from scratch gives more freedom.
+Ask the user which case applies before proceeding. If the user shares a URL and `chrome-devtools-mcp` is available, prefer option 2 — it saves them the work of capturing screenshots and copying HTML.
 
 ## Step 1 — Lock dependency versions
 
@@ -103,7 +104,20 @@ Rules:
 
 ## Building from a screenshot or sketch
 
-First, determine the source type — this changes how you approach the build:
+### From a URL (chrome-devtools-mcp)
+
+When the user provides a URL and `chrome-devtools-mcp` is available:
+
+1. Navigate to the URL.
+2. **Verify the page loaded correctly** — check that the current URL matches what the user provided. If the page redirected (e.g. to a login screen), tell the user, ask them to log in manually in Chrome, wait for their confirmation, then verify again before continuing.
+3. Take a screenshot and extract the page's HTML structure. Focus on the main content area, not the full document.
+4. Use the screenshot for visual layout and the extracted HTML for semantic structure, then proceed to component mapping and building.
+
+### From a screenshot or HTML
+
+**Ideal input is screenshot + HTML source.** When you have both, use the HTML to understand the semantic structure (headings, lists, form elements, containers) and the screenshot to understand the visual layout and intent. Map semantic HTML elements to their Gaia equivalents — the original CSS classes don't matter, but the element types and nesting do. If you only received one, ask the user if they can provide the other before proceeding.
+
+Then determine the source type — this changes how you approach the build:
 
 ### Gaia screenshot (from a production app already using Gaia)
 
